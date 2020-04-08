@@ -45,7 +45,7 @@ public:
 	virtual void fb3() { cout << "B3.fb3" << endl; }
 };
 
-// D1 derived from B2 and has no self virtual member functions
+// D1 derived from B2 and has no virtual member functions
 class D1 : public B2
 {
 	POINTER d1;
@@ -53,7 +53,7 @@ public:
 	D1() : d1(0) {}
 };
 
-// D2 derived from B2 and has one self virtual member function fb
+// D2 derived from B2 and has one override virtual member function fb
 class D2 : public B2
 {
 	POINTER d2;
@@ -62,7 +62,8 @@ public:
 	virtual void fb() override { cout << "D2.fb" << endl; }
 };
 
-// D3 derived from B2 and has two self virtual member functions fb and fc
+// D3 derived from B2 and has one override virtual member function fb
+// and one non-override virtual member function fc
 class D3 : public B2
 {
 	POINTER d3;
@@ -72,7 +73,7 @@ public:
 	virtual void fc() { cout << "D3.fc" << endl; }
 };
 
-// D4 derived from B1 and has one self virtual member function fc
+// D4 derived from B1 and has one virtual member function fc
 class D4 : public B1
 {
 	POINTER d4;
@@ -81,7 +82,7 @@ public:
 	virtual void fc() { cout << "D4.fc" << endl; }
 };
 
-// D11 derived from B2 and B3 and has no self virtual member functions
+// D11 derived from B2 and B3 and has no virtual member functions
 class D11 : public B2, public B3
 {
 	POINTER d11;
@@ -89,7 +90,7 @@ public:
 	D11() : d11(0) {}
 };
 
-// D12 derived from B2 and B3 and has one self virtual member function fb
+// D12 derived from B2 and B3 and has one override virtual member function fb
 class D12 : public B2, public B3
 {
 	POINTER d12;
@@ -98,7 +99,8 @@ public:
 	virtual void fb() override { cout << "D12.fb" << endl; }
 };
 
-// D13 derived from B2 and B3 and has two self virtual member functions fb and fc
+// D13 derived from B2 and B3 and has one override virtual member functions fb
+// and one non-override virtual member function fc
 class D13 : public B2, public B3
 {
 	POINTER d13;
@@ -108,7 +110,8 @@ public:
 	virtual void fc() { cout << "D13.fc" << endl; }
 };
 
-// D14 derived from B1, B2 and B3 and has two self virtual member functions fb and fc
+// D14 derived from B1, B2 and B3 and has one override virtual member functions fb
+// and one non-override virtual member function fc
 class D14 : public B1, public B2, public B3
 {
 	POINTER d14;
